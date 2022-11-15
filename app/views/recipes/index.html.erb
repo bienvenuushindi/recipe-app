@@ -1,14 +1,16 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Recipes</h1>
+<h1 class="text-center"><strong>Recipes</strong></h1>
+
+<div class="text-right">
+  <%= link_to "New recipe", new_recipe_path, class: 'btn btn-primary', style:"margin-bottom: 12px" %>
+</div>
 
 <div id="recipes">
   <% @recipes.each do |recipe| %>
-    <%= render recipe %>
-    <p>
-      <%= link_to "Show this recipe", recipe %>
-    </p>
+    <div class="jumbotron">
+      <h2><%= link_to recipe.name, recipe %></h2>
+      <p><%= recipe.description %></p>
+      <%= button_to "Remove this recipe", recipe, method: :delete %></div>
   <% end %>
 </div>
-
-<%= link_to "New recipe", new_recipe_path %>
