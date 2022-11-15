@@ -1,9 +1,24 @@
-<ul>
+<div>
+  <nav class=" navbar navbar-expand-lg shadow-lg  navbar-dark bg-dark">
+    <h3 class="navbar-brand px-5">
+      <span><</span>AppName/>
+    </h3>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="nav-group navbar-nav mr-auto">
+        <li class="nav-item"><%= link_to 'Recipes', recipes_path, class: 'nav-link py-2 px-5 text-uppercase text-white active ' %></li>
+        <li class="nav-item"><%= link_to 'Foods', foods_path, class: 'nav-link py-2 px-5 text-uppercase  text-white active ' %></li>
+        <li class="nav-item"><%= link_to 'Inventories', inventories_path, class: 'nav-link py-2 px-5 text-uppercase text-white active ' %></li>
+        <% if current_user == nil %>
+          <li class="nav-item"><%= link_to 'Login', new_user_session_path, class: 'nav-link py-2 px-5 text-uppercase font-family-link text-white active ' %></li>
+          <li class="nav-item"><%= link_to 'Register', new_user_registration_path, class: 'nav-link py-2 px-5 text-uppercase font-family-link text-white active ' %></li>
+        <% else %>
+          <li class="nav-item">
+            <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link py-2 px-5 text-uppercase font-family-link text-white active ' %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
 
-  <li class="item"><%= link_to 'Login', new_user_session_path %></li>
-  <li class="item"><%= button_to 'Logout',  destroy_user_session_path, remote: true, data: { confirm: 'Are you sure?' }, method: :delete %></li>
-  <li class="item"><%= link_to 'Register', new_user_registration_path %></li>
-  <li class="item"><%= link_to 'Recipes', recipes_path %></li>
-  <li class="item"><%= link_to 'Foods', foods_path %></li>
-  <li class="item"><%= link_to 'Inventories', inventories_path %></li>
-</ul>
+
+</div>
