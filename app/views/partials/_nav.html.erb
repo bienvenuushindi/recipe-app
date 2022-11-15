@@ -1,0 +1,9 @@
+<ul>
+
+  <li class="item"><%= link_to 'Login', new_user_session_path %></li>
+  <li class="item"><%= button_to 'Logout',  destroy_user_session_path, remote: true, data: { confirm: 'Are you sure?' }, method: :delete %></li>
+  <li class="item"><%= link_to 'Register', new_user_registration_path %></li>
+  <li class="item"><%= link_to 'Recipes', recipes_path %></li>
+  <li class="item"><%= link_to 'Foods', foods_path %></li>
+  <li class="item"><%= link_to 'Inventories', inventories_path %></li>
+</ul>
