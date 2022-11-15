@@ -2,6 +2,7 @@
 
 <%= render @recipe %>
 
-<div class="text-right">
-  <%= link_to "New recipe", new_recipe_path, class: 'btn btn-primary', style:"margin-bottom: 12px" %>
+<div style="display: flex; justify-content: space-between">
+  <%= link_to "Generate Shopping List", new_recipe_path, class: 'btn btn-primary', style:"margin-bottom: 12px" %>
+  <%= link_to "Add Ingredient", new_recipe_path, class: 'btn btn-primary', style:"margin-bottom: 12px" %>
 </div>
