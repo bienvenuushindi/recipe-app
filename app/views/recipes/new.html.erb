@@ -1,9 +1,13 @@
-<h1>New recipe</h1>
+<%= turbo_frame_tag "modal" do %>
+  <div class="modal">
+    <h1>New recipe</h1>
 
-<%= render "form", recipe: @recipe %>
+    <%= render "form", recipe: @recipe %>
 
-<br>
+    <br>
 
-<div>
-  <%= link_to "Back to recipes", recipes_path %>
-</div>
+    <div>
+      <%= link_to "Back to recipes", recipes_path %>
+    </div>
+  </div>
+<% end %>

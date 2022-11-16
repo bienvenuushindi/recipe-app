@@ -44,3 +44,14 @@ p {
   display: flex;
   gap: 2rem;
 }
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    border: solid 2px red;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    background-color: rgba(193, 199, 208, 0.45);
+    backdrop-filter: blur(5px);
+}
