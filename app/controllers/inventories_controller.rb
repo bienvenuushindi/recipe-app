@@ -20,7 +20,7 @@ class InventoriesController < ApplicationController
   # POST /inventories or /inventories.json
   def create
     @inventory = Inventory.new(inventory_params)
-
+    @inventory.user = current_user
     respond_to do |format|
       if @inventory.save
         format.html { redirect_to inventory_url(@inventory), notice: 'Inventory was successfully created.' }
@@ -47,11 +47,17 @@ class InventoriesController < ApplicationController
 
   # DELETE /inventories/1 or /inventories/1.json
   def destroy
-    @inventory.destroy
+    @inventory = Inventory.find(params[:id])
+    unless @inventory.user == current_user
+      return flash[:alert] =
+               'You do not have access to delete the Food belongs to other Users.'
+    end
 
     respond_to do |format|
-      format.html { redirect_to inventories_url, notice: 'Inventory was successfully destroyed.' }
-      format.json { head :no_content }
+      if @inventory.destroy
+        format.html { redirect_to inventories_url, notice: 'Inventory was successfully destroyed.' }
+        format.json { head :no_content }
+      end
     end
   end
 
@@ -64,6 +70,6 @@ class InventoriesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def inventory_params
-    params.require(:inventory).permit(:name, :user_id)
+    params.require(:inventory).permit(:name, :description)
   end
 end
