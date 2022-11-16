@@ -1,0 +1,20 @@
+<div class="container">
+  <h1 class="text-center mt-5">Public Recipes</h1>
+  <ul id="public-recipes-list">
+    <% @recipes.each_with_index do |recipe, index| %>
+      <li id='<%= "recipe-item-#{index}" %>' class="card shadow-sm border-1 my-4 p-4 position-relative ">
+        <div class="row">
+          <div class="col-md-5">
+            <h3> <%= recipe.name %></h3>
+            <span>By: <%= recipe.user.name %></span>
+          </div>
+          <div class="col-md-7">
+            <h5><span class="text-muted">Total Food Items:</span>  <%= recipe.foods_counter %></h5>
+            <h5><span class="text-muted">Total price:</span> $<%= recipe.foods_total_price %> </h5>
+          </div>
+        </div>
+        <%= link_to '', recipe_path(recipe), class: 'stretched-link' %>
+      </li>
+    <% end %>
+  </ul>
+</div>
