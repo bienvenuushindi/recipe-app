@@ -1,13 +1,21 @@
 <div id="<%= dom_id recipe %>">
-  <p>
-    <strong>Name:</strong>
+  <h1>
+    <strong>
     <%= recipe.name %>
-  </p>
+    </strong>
+  </h1>
+  <div style="display: flex; justify-content: space-between">
+    <p><strong>Preparation time:</strong><%= recipe.preparation_time %></p>
 
-  <p>
-    <strong>Preparation time:</strong>
-    <%= recipe.preparation_time %>
-  </p>
+    <div class="form-check form-switch">
+      <label class="form-check-label" for="flexSwitchCheckChecked">Public: </label>
+      <%if recipe.public %>
+        <input style="color: green" class="form-check-input" type="checkbox" checked disabled>
+      <% else %>
+        <input class="form-check-input" type="checkbox" disabled>
+      <% end %>
+    </div>
+  </div>
 
   <p>
     <strong>Cooking time:</strong>
@@ -15,18 +23,7 @@
   </p>
 
   <p>
-    <strong>Description:</strong>
     <%= recipe.description %>
-  </p>
-
-  <p>
-    <strong>Public:</strong>
-    <%= recipe.public %>
-  </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= recipe.user_id %>
   </p>
 
 </div>
