@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+#recipes-info {
+    display: flex;
+    margin: 1rem;
+    padding: 1.5rem 6rem;
+    justify-content: space-between;
+    max-height: 8rem;
+}
+
+.limit-lines {
+    max-width: 32rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+}

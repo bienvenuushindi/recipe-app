@@ -8,9 +8,12 @@
 
 <div id="recipes">
   <% @recipes.each do |recipe| %>
-    <div class="jumbotron">
-      <h2><%= link_to recipe.name, recipe %></h2>
-      <p><%= recipe.description %></p>
-      <%= button_to "Remove this recipe", recipe, method: :delete %></div>
+    <div class="border border-info" id="recipes-info">
+      <div>
+        <h2><%= link_to recipe.name, recipe %></h2>
+        <%= button_to "Remove this recipe", recipe, method: :delete %>
+      </div>
+      <p class="limit-lines"><%= recipe.description %></p>
+    </div>
   <% end %>
 </div>
