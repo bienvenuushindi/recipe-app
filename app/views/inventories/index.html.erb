@@ -6,13 +6,6 @@
   <% @inventories.each do |inventory| %>
   <div class="inventory">
     <%= render inventory %>
-    <p>
-      <%= link_to "Show this inventory", inventory %>
-    </p>
-    <p>
-      <%= link_to "Remove", inventory, method: :delete %>
-    </p>
-
   <% end %>
 </div>
 

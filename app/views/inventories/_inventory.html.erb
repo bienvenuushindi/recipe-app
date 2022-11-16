@@ -1,8 +1,13 @@
 <div class= "flex" id="<%= dom_id inventory %>">
+  <div>
   <p>
     <strong>Name:</strong>
     <%= inventory.name %>
   </p>
+   <p>
+     <%= button_to "Destroy this inventory", @inventory, method: :delete %>
+    </p>
+  </div>
 
   <p>
     <strong>Description:</strong>
