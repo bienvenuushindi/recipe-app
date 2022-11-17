@@ -2,9 +2,7 @@
 
 <%= render @recipe %>
 
-<div>
-  <%= link_to "Edit this recipe", edit_recipe_path(@recipe) %> |
-  <%= link_to "Back to recipes", recipes_path %>
-
-  <%= button_to "Destroy this recipe", @recipe, method: :delete %>
+<div style="display: flex; justify-content: space-between">
+  <%= link_to "Generate Shopping List", new_recipe_path, class: 'btn btn-primary', style:"margin-bottom: 12px" %>
+  <%= link_to "Add Ingredient", new_recipe_path, class: 'btn btn-primary', style:"margin-bottom: 12px" %>
 </div>
