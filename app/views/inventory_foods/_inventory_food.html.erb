@@ -13,5 +13,20 @@
     <strong>Inventory:</strong>
     <%= inventory_food.inventory_id %>
   </p>
-
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Food</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= inventory_food.food_id %></td>
+      <td>  <%= inventory_food.quantity %></td>
+      <td> <%= inventory_food.inventory_id %></td>
+    </tr>
+  </tbody>
+</table>
 </div>

@@ -18,12 +18,14 @@
 
   <div>
     <%= form.label :food_id, style: "display: block" %>
-    <%= form.text_field :food_id %>
+    <%= form.select :food_id, Food.all.collect {|u| [u.name] },
+             { :multiple => true, :size => 10 } %>
   </div>
 
   <div>
     <%= form.label :inventory_id, style: "display: block" %>
-    <%= form.text_field :inventory_id %>
+    <%= form.select :inventory_id, Inventory.all.collect {|u| [u.id ] },
+             { :multiple => true, :size => 10 } %>
   </div>
 
   <div>
