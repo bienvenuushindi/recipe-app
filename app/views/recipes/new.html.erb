@@ -1,14 +1,13 @@
 <%= turbo_frame_tag "modal" do %>
   <div class="modal">
     <div>
-      <%= link_to "Close", recipes_path, class: 'btn btn-outline-danger'%>
+      <%= link_to "Close", :back, class: 'btn btn-outline-danger'%>
     </div>
     <h1>New recipe</h1>
 
     <%= render "form", recipe: @recipe %>
 
     <br>
-
 
   </div>
 <% end %>

@@ -1,2 +1,11 @@
-<h1>Generate Shopping List</h1>
-
+<%= turbo_frame_tag "modal" do %>
+  <div class="modal">
+    <div>
+      <%= link_to "Close", :back, class: 'btn btn-outline-danger'%>
+    </div>
+    <h1>Generate Shopping List</h1>
+    <%= form_with(scope: "inventory") do |f| %>
+      <%= f.select :id, @inventories.map { |c| [c.name, c.id] } %>
+    <% end %>
+  </div>
+<% end %>
