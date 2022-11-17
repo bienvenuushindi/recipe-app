@@ -5,16 +5,14 @@
     <strong>Name:</strong>
     <%= inventory.name %>
   </p>
-   <p>
-     <%= button_to "Destroy this inventory", inventory, method: :delete %>
-    </p>
+     <%= button_to "Remove", inventory, method: :delete, class: "btn btn-danger" %>
   </div>
-
+<div>
   <p>
     <strong>Description:</strong>
     <%= inventory.description %>
   </p>
-<%= link_to "LINK", inventory_foods_path %>
-
+<%= link_to "View Inventory Food", inventory_foods_path %>
+</div>
 </div>
 

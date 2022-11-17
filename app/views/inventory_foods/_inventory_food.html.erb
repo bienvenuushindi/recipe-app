@@ -5,7 +5,7 @@
     <tr>
       <td><%= inventory_food.food.name %></td>
       <td>  <%= inventory_food.quantity %></td>
-      <td> <%= inventory_food.inventory.name %></td>
+      <td> <%= button_to "Remove", inventory_food, method: :delete, class: "btn btn-danger" %></td>
     </tr>
   </tbody>
 
