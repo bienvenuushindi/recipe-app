@@ -30,7 +30,7 @@
     -webkit-line-clamp: 2;
 }
 
-.inventory {
+/* .inventory {
   border: 2px solid black;
   margin-bottom: 1rem;
   padding: 1.5rem;
@@ -43,4 +43,4 @@ p {
 .flex {
   display: flex;
   gap: 2rem;
-}
+} */

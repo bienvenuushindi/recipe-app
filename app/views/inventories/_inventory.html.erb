@@ -1,4 +1,4 @@
-<%= link_to inventory_foods_path do %>
+
 <div class= "flex" id="<%= dom_id inventory %>">
   <div>
   <p>
@@ -6,7 +6,7 @@
     <%= inventory.name %>
   </p>
    <p>
-     <%= button_to "Destroy this inventory", @inventory, method: :delete %>
+     <%= button_to "Destroy this inventory", inventory, method: :delete %>
     </p>
   </div>
 
@@ -14,6 +14,7 @@
     <strong>Description:</strong>
     <%= inventory.description %>
   </p>
+<%= link_to "LINK", inventory_foods_path %>
 
 </div>
-<%end%>
+
