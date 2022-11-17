@@ -4,9 +4,11 @@
 
 <div id="inventories">
   <% @inventories.each do |inventory| %>
-  <div class="inventory">
-    <%= render inventory %>
+    <div class="inventory">
+      <%= render inventory %>
   <% end %>
+    </div>
 </div>
 
 <%= link_to "New inventory", new_inventory_path %>
+

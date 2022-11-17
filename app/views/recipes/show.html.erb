@@ -6,3 +6,7 @@
   <%= link_to "Generate Shopping List", new_recipe_path, class: 'btn btn-primary', style:"margin-bottom: 12px" %>
   <%= link_to "Add Ingredient", new_recipe_path, class: 'btn btn-primary', style:"margin-bottom: 12px" %>
 </div>
+
+<%= form_with(scope: "inventory") do |f| %>
+  <%= f.select :id, @inventories.map { |c| [c.name, c.id] } %>
+<% end %>
