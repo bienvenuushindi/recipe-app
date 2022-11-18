@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   devise_for :users
   root 'home#index'
   get  '/public_recipes', to: 'home#recipes', as: 'public_recipes'
-  resources :shopping_list
+  resources :shopping_list, except: [:show]
+  get '/my_shopping_list', to: 'shopping_list#show', as: 'my_shopping_list'
   resources :inventory_foods
   resources :inventories
   resources :recipe_foods
