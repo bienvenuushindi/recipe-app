@@ -10,5 +10,6 @@ class ShoppingListController < ApplicationController
   def show
     @recipe = Recipe.find(params[:recipe_id])
     @inventory = Inventory.find(params[:inventory_id])
+    @inventory_food = InventoryFood.all
   end
 end
