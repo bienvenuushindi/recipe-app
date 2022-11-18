@@ -3,12 +3,20 @@
 <h1>Inventory foods</h1>
 
 <div id="inventory_foods">
-  <% @inventory_foods.each do |inventory_food| %>
-    <%= render inventory_food %>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Food</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+    <%= render @inventory_foods %>
+    </table>
     <p>
-      <%= link_to "Show this inventory food", inventory_food %>
+
     </p>
-  <% end %>
+
 </div>
 
-<%= link_to "New inventory food", new_inventory_food_path %>
+<%= link_to "New inventory food", new_inventory_food_path, class: "btn btn-primary" %>

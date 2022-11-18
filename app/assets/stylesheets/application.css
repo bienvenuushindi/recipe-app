@@ -30,12 +30,6 @@
   -webkit-line-clamp: 2;
 }
 
-.inventory {
-  border: 2px solid black;
-  margin-bottom: 1rem;
-  padding: 1.5rem;
-}
-
 p {
   list-style: none;
 }
@@ -43,6 +37,10 @@ p {
 .flex {
   display: flex;
   gap: 2rem;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  padding: 1.5rem;
 }
 
 .modal {
@@ -53,4 +51,8 @@ p {
   position: fixed;
   background-color: rgba(193, 199, 208, 0.45);
   backdrop-filter: blur(5px);
+}
+
+.button {
+  margin-top: 1rem
 }
