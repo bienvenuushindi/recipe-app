@@ -1,3 +1,7 @@
+
+<div class="container text-center">
+<div class="col align-self-center">
+<div>
 <h1>New inventory food</h1>
 
 <%= render "form", inventory_food: @inventory_food %>
@@ -5,5 +9,8 @@
 <br>
 
 <div>
-  <%= link_to "Back to inventory foods", inventory_foods_path %>
+  <%= link_to "Back to inventory foods", inventory_foods_path, class: "btn btn-primary" %>
+</div>
+</div>
+</div>
 </div>
