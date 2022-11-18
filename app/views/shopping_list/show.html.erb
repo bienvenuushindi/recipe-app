@@ -23,7 +23,7 @@
   </tr>
   </thead>
   <tbody>
-  <%= @inventory_food.each do |ingredient| %>
+  <% @inventory_food.each do |ingredient| %>
   <tr>
     <td><%= ingredient.food.name %></td>
     <td><%= ingredient.quantity %></td>
