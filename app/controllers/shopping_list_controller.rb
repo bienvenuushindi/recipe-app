@@ -1,5 +1,9 @@
 class ShoppingListController < ApplicationController
-  def new
+  def index
     @inventories = Inventory.all
   end
+
+  def create
+  end
+
 end

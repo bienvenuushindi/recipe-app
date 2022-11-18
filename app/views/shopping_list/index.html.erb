@@ -6,6 +6,7 @@
     <h1>Generate Shopping List</h1>
     <%= form_with(scope: "inventory") do |f| %>
       <%= f.select :id, @inventories.map { |c| [c.name, c.id] } %>
+      <%= f.submit "Generate Shopping List" %>
     <% end %>
   </div>
 <% end %>
