@@ -28,6 +28,10 @@
       <td>
         $<%= ingredient.quantity * ingredient.food.price %>
       </td>
+      <td>
+        <%= link_to "Modify", edit_recipe_food_path(ingredient.id)	%>
+        <%= button_to "Destroy this recipe food", ingredient, method: :delete %>
+      </td>
     </tr>
   <% end %>
   </tbody>
