@@ -17,9 +17,8 @@ class ShoppingListController < ApplicationController
   def price_list
     list = []
     @inventory_food.each do |i|
-      list.push(i.food.price*i.quantity)
+      list.push(i.food.price * i.quantity)
     end
     list.sum
   end
-
 end
