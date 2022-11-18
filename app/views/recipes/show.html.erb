@@ -23,9 +23,11 @@
         <%= ingredient.food.name %>
       </td>
       <td>
-        <%= ingredient.quantity %>
+        <%= ingredient.quantity %> <%= ingredient.food.measurement_unit %>
       </td>
-      
+      <td>
+        $<%= ingredient.quantity * ingredient.food.price %>
+      </td>
     </tr>
   <% end %>
   </tbody>
