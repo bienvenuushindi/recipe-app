@@ -11,5 +11,15 @@ class ShoppingListController < ApplicationController
     @recipe = Recipe.find(params[:recipe_id])
     @inventory = Inventory.find(params[:inventory_id])
     @inventory_food = InventoryFood.all
+    @total_price = price_list
   end
+
+  def price_list
+    list = []
+    @inventory_food.each do |i|
+      list.push(i.food.price*i.quantity)
+    end
+    list.sum
+  end
+
 end
