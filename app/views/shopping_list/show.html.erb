@@ -4,13 +4,13 @@
 
 <div class="flex" style="justify-content: space-between">
   <div>
-    <h3>Amount of food to buy: <%= @inventory_food.length %></h3>
-    <h3>Total value of food needed: <%= @total_price %></h3>
+    <h3>Amount of food to buy: <%= @recipe.recipe_foods.count %></h3>
+    <h3>Total value of food needed: $<%= @recipe.foods_total_price %></h3>
   </div>
 
   <div>
-    <h3>Recipe: <%= link_to @recipe.name, @recipe%></h3>
-    <h3>Inventory: <%= link_to @inventory.name, @inventory%></h3>
+    <h3>Recipe: <%= link_to @recipe.name, @recipe %></h3>
+    <h3>Inventory: <%= link_to @inventory.name, @inventory %></h3>
   </div>
 </div>
 
@@ -23,13 +23,18 @@
   </tr>
   </thead>
   <tbody>
-  <% @inventory_food.each do |ingredient| %>
-  <tr>
-    <td><%= ingredient.food.name %></td>
-    <td><%= ingredient.quantity %></td>
-    <td>$ <%= ingredient.food.price * ingredient.quantity %></td>
-  </tr>
+  <% @recipe.recipe_foods.each do |ingredient| %>
+    <tr>
+      <td>
+        <%= ingredient.food.name %>
+      </td>
+      <td>
+        <%= ingredient.quantity %> <%= ingredient.food.measurement_unit %>
+      </td>
+      <td>
+        $<%= ingredient.quantity * ingredient.food.price %>
+      </td>
+    </tr>
   <% end %>
-  </tbody>
-</table>
+  </table>
 
