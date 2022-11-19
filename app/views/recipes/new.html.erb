@@ -1,0 +1,11 @@
+<div class="text-center">
+  <h1>New recipe</h1>
+
+  <%= render "form", recipe: @recipe %>
+
+  <br>
+
+  <div>
+    <%= link_to "Back to recipes", recipes_path, class: 'btn btn-sm btn-outline-dark' %>
+  </div>
+</div>

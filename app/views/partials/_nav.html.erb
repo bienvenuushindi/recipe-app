@@ -1,0 +1,23 @@
+<div>
+  <nav class=" navbar navbar-expand-lg shadow-lg  navbar-dark bg-dark">
+    <h3 class="navbar-brand px-5">
+      <span><</span>AppName/>
+    </h3>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav ">
+      <ul class="nav-group navbar-nav px-4">
+        <li class="nav-item"><%= link_to 'Recipes', public_recipes_path, class: 'nav-link py-2 px-5 text-uppercase text-white active' %></li>
+        <% if current_user == nil %>
+          <li class="nav-item"><%= link_to 'Login', new_user_session_path, class: 'nav-link py-2 px-5 text-uppercase text-white' %></li>
+          <li class="nav-item"><%= link_to 'Register', new_user_registration_path, class: 'nav-link py-2 px-5 text-uppercase  text-white' %></li>
+        <% else %>
+          <li class="nav-item"><%= link_to 'My Recipes', recipes_path, class: 'nav-link py-2 px-5 text-uppercase text-white active' %></li>
+          <li class="nav-item"><%= link_to 'My Foods', foods_path, class: 'nav-link py-2 px-5 text-uppercase  text-white' %></li>
+          <li class="nav-item"><%= link_to 'My Inventories', inventories_path, class: 'nav-link py-2 px-5 text-uppercase text-white' %></li>
+          <li class="nav-item">
+            <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link py-1 px-1 mt-1 text-uppercase btn btn-secondary mr-2' %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+</div>

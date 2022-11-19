@@ -1,0 +1,25 @@
+<h1 class="text-center">Foods</h1>
+
+<div id="foods" class="col-md-7 mx-auto">
+  <div class="text-end">
+    <%= link_to "New food", new_food_path, class: 'btn btn-sm btn-primary' %>
+  </div>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Food</th>
+      <th>Measurement Unit</th>
+      <th>Price</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @foods.each do |food| %>
+      <%= render food %>
+    <% end %>
+    </tbody>
+  </table>
+
+</div>
+
+

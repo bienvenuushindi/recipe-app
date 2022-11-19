@@ -1,0 +1,20 @@
+<h1>Inventory foods</h1>
+
+<div id="inventory_foods">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Food</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+    <%= render @inventory_foods %>
+    </table>
+    <p>
+
+    </p>
+
+</div>
+
+<%= link_to "New inventory food", new_inventory_food_path, class: "btn btn-primary" %>

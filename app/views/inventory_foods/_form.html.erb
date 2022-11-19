@@ -1,0 +1,36 @@
+<div class="col-md-6 mx-auto text-start">
+  <%= form_with(model: inventory_food) do |form| %>
+    <% if inventory_food.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(inventory_food.errors.count, "error") %> prohibited this inventory_food from being saved:</h2>
+
+        <ul>
+          <% inventory_food.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= form.label :quantity,class: 'form-label text-start' %>
+      <%= form.number_field :quantity, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :food_id,class: 'form-label'%>
+      <%= form.select :food_id, Food.all.collect {|u| [u.name, u.id] },
+                      { :multiple => true, :size => 10 }, class: 'form-select' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :inventory_id,class: 'form-label' %>
+      <%= form.select :inventory_id, Inventory.all.collect {|u| [u.name, u.id ] },
+                      { :multiple => true, :size => 10 }, class: 'form-select' %>
+    </div>
+
+    <div class="text-end mt-2">
+      <%= form.submit 'Submit', class: 'btn btn-sm btn-primary' %>
+    </div>
+  <% end %>
+</div>
