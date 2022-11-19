@@ -83,9 +83,8 @@ This project was built using.
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> Under construction. Come back later
 
-- [Live Demo Link](https://yourdeployedapplicationlink.com)
+- [Live Demo Link](https://microverse-recipe-app.herokuapp.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
