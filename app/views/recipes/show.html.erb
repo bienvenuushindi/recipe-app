@@ -3,6 +3,36 @@
 <%= render @recipe %>
 
 <div style="display: flex; justify-content: space-between">
-  <%= link_to "Generate Shopping List", new_recipe_path, class: 'btn btn-primary', style:"margin-bottom: 12px" %>
-  <%= link_to "Add Ingredient", new_recipe_path, class: 'btn btn-primary', style:"margin-bottom: 12px" %>
+  <%= link_to "Generate Shopping List", "#{shopping_list_index_path}?recipe_id=#{@recipe.id}", data: { turbo_frame: "modal" }, class: 'btn btn-primary', style:"margin-bottom: 12px" %>
+  <%= link_to "Add Ingredient", new_recipe_food_path, class: 'btn btn-primary', style:"margin-bottom: 12px" %>
 </div>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Food</th>
+    <th>Quantity</th>
+    <th>Value</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @recipe_food.each do |ingredient| %>
+    <tr>
+      <td>
+        <%= ingredient.food.name %>
+      </td>
+      <td>
+        <%= ingredient.quantity %> <%= ingredient.food.measurement_unit %>
+      </td>
+      <td>
+        $<%= ingredient.quantity * ingredient.food.price %>
+      </td>
+      <td>
+        <%= link_to "Modify", edit_recipe_food_path(ingredient.id)	%>
+        <%= button_to "Delete", ingredient, method: :delete %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

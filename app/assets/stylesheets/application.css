@@ -15,19 +15,19 @@
  */
 
 #recipes-info {
-    display: flex;
-    margin: 1rem;
-    padding: 1.5rem 6rem;
-    justify-content: space-between;
-    max-height: 8rem;
+  display: flex;
+  margin: 1rem;
+  padding: 1.5rem 6rem;
+  justify-content: space-between;
+  max-height: 8rem;
 }
 
 .limit-lines {
-    max-width: 32rem;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    -webkit-line-clamp: 2;
+  max-width: 32rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
 }
 
 p {
@@ -41,6 +41,16 @@ p {
   border-radius: 5px;
   margin-bottom: 1rem;
   padding: 1.5rem;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  background-color: rgba(193, 199, 208, 0.45);
+  backdrop-filter: blur(5px);
 }
 
 .button {
