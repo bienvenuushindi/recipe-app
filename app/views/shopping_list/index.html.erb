@@ -1,0 +1,12 @@
+<%= turbo_frame_tag "modal" do %>
+  <div class="modal">
+    <div>
+      <%= link_to "Close", :back, class: 'btn btn-outline-danger'%>
+    </div>
+    <h1>Generate Shopping List</h1>
+    <%= form_with(scope: "inventory", url: "#{shopping_list_index_path}?recipe_id=#{params[:recipe_id]}", method: :post) do |f| %>
+      <%= f.select :id, @inventories.map { |c| [c.name, c.id] } %>
+      <%= f.submit "Generate Shopping List" %>
+    <% end %>
+  </div>
+<% end %>

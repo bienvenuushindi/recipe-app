@@ -23,11 +23,10 @@ class InventoriesController < ApplicationController
     @inventory.user = current_user
     respond_to do |format|
       if @inventory.save
-        format.html { redirect_to inventory_url(@inventory), notice: 'Inventory was successfully created.' }
-        format.json { render :show, status: :created, location: @inventory }
+        flash[:notice] = 'Inventory was successfully created.'
+        format.html { redirect_back(fallback_location: public_recipes_path) }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @inventory.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -37,10 +36,8 @@ class InventoriesController < ApplicationController
     respond_to do |format|
       if @inventory.update(inventory_params)
         format.html { redirect_to inventory_url(@inventory), notice: 'Inventory was successfully updated.' }
-        format.json { render :show, status: :ok, location: @inventory }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @inventory.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -54,10 +51,7 @@ class InventoriesController < ApplicationController
     end
 
     respond_to do |format|
-      if @inventory.destroy
-        format.html { redirect_to inventories_url }
-        format.json { head :no_content }
-      end
+      format.html { redirect_to inventories_url } if @inventory.destroy
     end
   end
 

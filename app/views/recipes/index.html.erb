@@ -2,8 +2,8 @@
 
 <h1 class="text-center"><strong>Recipes</strong></h1>
 
-<div class="text-right">
-  <%= link_to "New recipe", new_recipe_path, class: 'btn btn-primary', style:"margin-bottom: 12px" %>
+<div class="text-end">
+  <%= link_to "New recipe", new_recipe_path, data: { turbo_frame: "modal" }, class: 'btn btn-primary'%>
 </div>
 
 <div id="recipes">
@@ -11,7 +11,7 @@
     <div class="border border-info" id="recipes-info">
       <div>
         <h2><%= link_to recipe.name, recipe %></h2>
-        <%= button_to "Remove this recipe", recipe, method: :delete %>
+        <%= button_to "Remove this recipe", recipe, method: :delete, class: 'btn btn-sm btn-outline-danger' %>
       </div>
       <p class="limit-lines"><%= recipe.description %></p>
     </div>

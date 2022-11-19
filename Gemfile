@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.1.0'
+ruby '3.1.2'
 gem 'bootsnap', require: false
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem 'bootstrap'
+# gem 'bootstrap'
 # Help fast authentication development
 gem 'devise'
 gem 'importmap-rails'

@@ -1,27 +1,30 @@
-<%= form_with(model: inventory) do |form| %>
-  <% if inventory.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(inventory.errors.count, "error") %> prohibited this inventory from being saved:</h2>
+<div class="col-md-6 mx-auto text-start">
+  <%= form_with(model: inventory) do |form| %>
+    <% if inventory.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(inventory.errors.count, "error") %> prohibited this inventory from being saved:</h2>
 
-      <ul>
-        <% inventory.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% inventory.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= form.label :name, class: 'form-label' %>
+      <%= form.text_field :name, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= form.label :description, class: 'form-label' %>
+      <%= form.text_field :description, class: 'form-control' %>
+    </div>
+
+    <div class="button text-end mt-2">
+      <%= form.submit 'Submit', class: 'btn btn-sm btn-primary' %>
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_field :description %>
-  </div>
-
-  <div class="button">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

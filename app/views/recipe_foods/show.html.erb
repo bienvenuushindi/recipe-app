@@ -1,10 +1,11 @@
-<p style="color: green"><%= notice %></p>
+<div class="col-md-6 mx-auto">
+  <%= render @recipe_food %>
 
-<%= render @recipe_food %>
+  <div class="d-flex gap-2">
+    <%= link_to "Edit this recipe food", edit_recipe_food_path(@recipe_food), class: 'btn btn-sm btn-outline-success' %> |
+    <%= link_to "Back to recipe foods", recipe_foods_path, class: 'btn btn-sm btn-outline-dark'%> |
 
-<div>
-  <%= link_to "Edit this recipe food", edit_recipe_food_path(@recipe_food) %> |
-  <%= link_to "Back to recipe foods", recipe_foods_path %>
+    <%= button_to "Destroy this recipe food", @recipe_food, method: :delete, class: 'btn btn-sm btn-outline-danger' %>
+  </div>
 
-  <%= button_to "Destroy this recipe food", @recipe_food, method: :delete %>
 </div>

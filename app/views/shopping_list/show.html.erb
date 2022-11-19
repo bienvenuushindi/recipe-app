@@ -1,0 +1,40 @@
+<h1 class="text-center">Shopping List</h1>
+
+<br>
+
+<div class="flex" style="justify-content: space-between">
+  <div>
+    <h3>Amount of food to buy: <%= @recipe.recipe_foods.count %></h3>
+    <h3>Total value of food needed: $<%= @recipe.foods_total_price %></h3>
+  </div>
+
+  <div>
+    <h3>Recipe: <%= link_to @recipe.name, @recipe %></h3>
+    <h3>Inventory: <%= link_to @inventory.name, @inventory %></h3>
+  </div>
+</div>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Food</th>
+    <th>Quantity</th>
+    <th>Price</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @recipe.recipe_foods.each do |ingredient| %>
+    <tr>
+      <td>
+        <%= ingredient.food.name %>
+      </td>
+      <td>
+        <%= ingredient.quantity %> <%= ingredient.food.measurement_unit %>
+      </td>
+      <td>
+        $<%= ingredient.quantity * ingredient.food.price %>
+      </td>
+    </tr>
+  <% end %>
+  </table>
+
