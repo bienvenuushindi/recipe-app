@@ -93,7 +93,6 @@ This project was built using.
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-> Describe how a new developer could make use of your project.
 
 To get a local copy up and running, follow these steps.
 
@@ -137,7 +136,6 @@ rails s
 
 ## 👥 Authors <a name="authors"></a>
 
-> Mention all of the collaborators of this project.
 
 👤 **Ushindi Bienvenu**
 - GitHub: [@usbbush](https://github.com/bienvenuushindi)
