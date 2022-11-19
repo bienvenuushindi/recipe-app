@@ -1,17 +1,13 @@
+
 <div id="<%= dom_id inventory_food %>">
-  <p>
-    <strong>Quantity:</strong>
-    <%= inventory_food.quantity %>
-  </p>
 
-  <p>
-    <strong>Food:</strong>
-    <%= inventory_food.food_id %>
-  </p>
-
-  <p>
-    <strong>Inventory:</strong>
-    <%= inventory_food.inventory_id %>
-  </p>
+  <tbody>
+    <tr>
+      <td><%= inventory_food.food.name %></td>
+      <td>  <%= inventory_food.quantity %></td>
+      <td> <%= button_to "Remove", inventory_food, method: :delete, class: "btn btn-danger" %></td>
+    </tr>
+  </tbody>
 
 </div>
+
