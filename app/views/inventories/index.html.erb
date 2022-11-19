@@ -1,11 +1,10 @@
-<p style="color: green"><%= notice %></p>
-
 <h1>Inventories</h1>
 
 <div id="inventories">
   <% @inventories.each do |inventory| %>
-  <div class="inventory">
-    <%= render inventory %>
+    <div class="inventory">
+      <%= render inventory %>
+    </div>
   <% end %>
 </div>
 
