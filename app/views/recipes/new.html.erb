@@ -1,27 +1,11 @@
-<!--<<<<<<< HEAD-->
-<!--<div class="text-center">-->
-<!--  <h1>New recipe</h1>-->
+<div class="text-center">
+  <h1>New recipe</h1>
 
-  <%#= render "form", recipe: @recipe %>
+  <%= render "form", recipe: @recipe %>
 
-<!--  <br>-->
+  <br>
 
-<!--  <div>-->
-    <%#= link_to "Back to recipes", recipes_path, class: 'btn btn-sm btn-outline-dark' %>
-<!--  </div>-->
-<!--</div>-->
-
-<!--=======-->
-<%= turbo_frame_tag "modal" do %>
-  <div class="modal">
-    <div>
-      <%= link_to "Close", :back, class: 'btn btn-outline-danger'%>
-    </div>
-    <h1>New recipe</h1>
-
-    <%= render "form", recipe: @recipe %>
-
-    <br>
-
+  <div>
+    <%= link_to "Back to recipes", recipes_path, class: 'btn btn-sm btn-outline-dark' %>
   </div>
-<% end %>
+</div>

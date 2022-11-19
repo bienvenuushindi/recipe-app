@@ -1,8 +1,10 @@
 <%= render @recipe %>
 
-<div style="display: flex; justify-content: space-between">
-  <%= link_to "Generate Shopping List", "#{shopping_list_index_path}?recipe_id=#{@recipe.id}", data: { turbo_frame: "modal" }, class: 'btn btn-primary', style:"margin-bottom: 12px" %>
-  <%= link_to "Add Ingredient", new_recipe_food_path, class: 'btn btn-primary', style:"margin-bottom: 12px" %>
+<div class='d-flex justify-content-between mb-3'>
+  <%= link_to "Generate Shopping List",
+              "#{shopping_list_index_path}?recipe_id=#{@recipe.id}",
+              data: { turbo_frame: "modal" }, class: 'btn btn-primary' %>
+  <%= link_to "Add Ingredient", new_recipe_food_path, class: 'btn btn-primary '%>
 </div>
 <table class="table table-striped">
   <thead>

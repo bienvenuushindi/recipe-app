@@ -22,13 +22,10 @@ class InventoryFoodsController < ApplicationController
     @inventory_food = InventoryFood.new(inventory_food_params)
     respond_to do |format|
       if @inventory_food.save
-        format.html do
-          redirect_to inventory_food_url(@inventory_food), notice: 'Inventory food was successfully created.'
-        end
-        format.json { render :show, status: :created, location: @inventory_food }
+        flash[:notice] = 'Inventory food was successfully created.'
+        format.html {  redirect_back(fallback_location: public_recipes_path) }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @inventory_food.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -40,10 +37,8 @@ class InventoryFoodsController < ApplicationController
         format.html do
           redirect_to inventory_food_url(@inventory_food), notice: 'Inventory food was successfully updated.'
         end
-        format.json { render :show, status: :ok, location: @inventory_food }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @inventory_food.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -54,7 +49,6 @@ class InventoryFoodsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to inventory_foods_url, notice: 'Inventory food was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 

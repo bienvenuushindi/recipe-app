@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get '/my_shopping_list', to: 'shopping_list#show', as: 'my_shopping_list'
   resources :inventory_foods
   resources :inventories
-  resources :recipe_foods
+  resources :recipe_foods, except: [:index]
   resources :recipes
   resources :foods
   resources :users
