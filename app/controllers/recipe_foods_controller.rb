@@ -3,9 +3,7 @@ class RecipeFoodsController < ApplicationController
 
   # GET /recipe_foods or /recipe_foods.json
 
-
   # GET /recipe_foods/1 or /recipe_foods/1.json
-
 
   # GET /recipe_foods/new
   def new
@@ -22,7 +20,7 @@ class RecipeFoodsController < ApplicationController
     respond_to do |format|
       if @recipe_food.save
         flash[:notice] = 'Recipe food was successfully created.'
-        format.html {  redirect_back(fallback_location: public_recipes_path) }
+        format.html { redirect_back(fallback_location: public_recipes_path) }
       else
         format.html { render :new, status: :unprocessable_entity }
       end

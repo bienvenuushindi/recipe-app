@@ -24,7 +24,7 @@ class InventoriesController < ApplicationController
     respond_to do |format|
       if @inventory.save
         flash[:notice] = 'Inventory was successfully created.'
-        format.html {  redirect_back(fallback_location: public_recipes_path) }
+        format.html { redirect_back(fallback_location: public_recipes_path) }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -51,9 +51,7 @@ class InventoriesController < ApplicationController
     end
 
     respond_to do |format|
-      if @inventory.destroy
-        format.html { redirect_to inventories_url }
-      end
+      format.html { redirect_to inventories_url } if @inventory.destroy
     end
   end
 

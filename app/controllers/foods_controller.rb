@@ -24,7 +24,7 @@ class FoodsController < ApplicationController
     respond_to do |format|
       if @food.save
         flash[:notice] = 'Food was successfully created.'
-        format.html {  redirect_back(fallback_location: public_recipes_path) }
+        format.html { redirect_back(fallback_location: public_recipes_path) }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
